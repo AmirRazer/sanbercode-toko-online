@@ -40,10 +40,13 @@
                             <form action="/product/{{ $value->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-
                                 <a href="/product/{{ $value->id }}" class="btn btn-info">Show</a>
+                                    @auth
+                                           
                                 <a href="/product/{{ $value->id }}/edit" class="btn btn-primary">Edit</a>
                                 <input type="submit" class="btn btn-danger my-1" value="Delete">
+                                    @endauth
+                             
                             </form>
                         </td>
                     </tr>
