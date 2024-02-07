@@ -42,7 +42,7 @@
                     <label for="formFileMultiple" class="col-form-label col-sm-2">Gambar</label>
 
                     <div class="col-sm-10">
-                        <input class="form-control" type="file" id="gambar"  name="gambar">
+                        <input class="form-control" type="file" id="gambar" name="gambar">
                         @error('gambar')
                             <div class="alert alert-danger col-sm-10">{{ $message }}</div>
                         @enderror
@@ -65,7 +65,7 @@
                     <label for="floatingTextarea" class="col-sm-2 col-form-label">kategori</label>
                     <div class="col-sm-10">
                         <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example"
-                            @error('category_id') is-invalid @enderror>
+                            id="category_id" name="category_id">
                             <option selected>Pilih Kategori</option>
                             @forelse($category as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>

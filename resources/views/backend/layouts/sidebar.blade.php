@@ -22,7 +22,9 @@
               <a href="categori" class="nav-item nav-link bg-transparent"><i class="fa fa-tachometer-alt me-2"></i>
                   Kategori
               </a>
-
+              <a href="{{ route('product.index') }}" class="nav-item nav-link bg-transparent"><i class="fa fa-tachometer-alt me-2"></i>
+                  Produk
+              </a>
 
               <div class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i

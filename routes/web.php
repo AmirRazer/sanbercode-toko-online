@@ -25,3 +25,5 @@ Route::get('/product', function () {
 
 Route::resource('categori', CategoriController::class);
 Route::resource('product', ProductController::class);
+//route product store
+// Route::post('/product', [ProductController::class, 'store']);
