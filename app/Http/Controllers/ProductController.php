@@ -12,7 +12,12 @@ class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
      */
+     public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
     public function index()
     {
          $product = products::all();
@@ -79,6 +84,9 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Products::find($id);
+         if (!$product) {
+        return redirect('/');
+    }
         return view('backend.product.detail', compact('product'));
     }
 
@@ -88,6 +96,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $product = Products::find($id);
+        
         $category = Category::all();
         // return view('backend.product.detail', compact('product', 'category'));
         return view('backend.product.edit', ['product' => $product, 'category' => $category]);

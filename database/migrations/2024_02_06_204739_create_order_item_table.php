@@ -11,14 +11,29 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //buatkan tabel chart
+         Schema::create('carts', function (Blueprint $table) {
+        $table->id();
+        $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        $table->timestamps();
+                 });
+
         Schema::create('order_item', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->integer('jumlah');
             $table->integer('total_harga');
+            $table->unsignedBigInteger('carts_id');
+            $table->foreign('carts_id')->references('id')->on('carts');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
         });
+    //      Schema::table('order_item', function (Blueprint $table) {
+       
+    //         $table->unsignedBigInteger('user_id');
+    //         $table->foreign('user_id')->references('id')->on('users');
+    // });
+
     }
 
     /**

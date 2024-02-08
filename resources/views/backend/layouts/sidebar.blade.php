@@ -19,26 +19,14 @@
                   </div>
               </div>
               <div class="navbar-nav w-100">
-                  <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>
-                      Dashboard
+                  <a href="{{ route('order-item.index') }}" class="nav-item nav-link active"><i
+                          class="fa fa-tachometer-alt me-2"></i>
+                      Order-Item
                   </a>
-                  <a href="categori" class="nav-item nav-link bg-transparent"><i class="fa fa-tachometer-alt me-2"></i>
+                  <a href="{{ route('categori.index') }}" class="nav-item nav-link bg-transparent"><i
+                          class="fa fa-tachometer-alt me-2"></i>
                       Kategori
                   </a>
-
-
-
-
-                  <div class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                              class="far fa-file-alt me-2"></i>Pages</a>
-                      <div class="dropdown-menu bg-transparent border-0">
-                          <a href="signin.html" class="dropdown-item">Sign In</a>
-                          <a href="signup.html" class="dropdown-item">Sign Up</a>
-                          <a href="404.html" class="dropdown-item">404 Error</a>
-                          <a href="blank.html" class="dropdown-item">Blank Page</a>
-                      </div>
-                  </div>
               @endauth
               @guest
                   <div class="ms-3">

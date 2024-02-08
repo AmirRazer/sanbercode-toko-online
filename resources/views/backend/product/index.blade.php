@@ -4,7 +4,8 @@
 
 @section('content')
     <div class="bg-light rounded h-100 p-4">
-        <h6 class="mb-4">Kategori</h6>
+        <h6 class="mb-4">Nama Produk
+        </h6>
         <a href="/product/create" class="btn btn-primary mb-3">Tambah</a>
         <table class="table">
             <thead class="thead-light">
@@ -41,12 +42,13 @@
                                 @csrf
                                 @method('DELETE')
                                 <a href="/product/{{ $value->id }}" class="btn btn-info">Show</a>
-                                    @auth
-                                           
-                                <a href="/product/{{ $value->id }}/edit" class="btn btn-primary">Edit</a>
-                                <input type="submit" class="btn btn-danger my-1" value="Delete">
-                                    @endauth
-                             
+                                @auth
+
+                                    <a href="/product/{{ $value->id }}/edit" class="btn btn-primary">Edit</a>
+                                    <input type="submit" class="btn btn-danger my-1" value="Delete">
+                                    
+                                @endauth
+                                
                             </form>
                         </td>
                     </tr>
