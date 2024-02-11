@@ -46,9 +46,14 @@
 
                                     <a href="/product/{{ $value->id }}/edit" class="btn btn-primary">Edit</a>
                                     <input type="submit" class="btn btn-danger my-1" value="Delete">
-                                    
+
                                 @endauth
-                                
+                                {{-- <a href="{{ route('backend.cart.add', $product->id) }}" class="btn btn-primary">Tambah ke Keranjang</a> --}}
+                                {{-- action tambah keranjang --}}
+                                <a href="{{ route('backend.keranjang.add_cart', $value->id) }}"
+                                    class="btn btn-primary">Tambah ke
+                                    Keranjang</a>
+
                             </form>
                         </td>
                     </tr>
