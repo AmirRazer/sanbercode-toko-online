@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoriController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('categori', CategoriController::class);
     Route::resource('product', ProductController::class);
     Route::resource('order-item', OrderItemController::class);
+
+    
+
+Route::post('backend/keranjang/add_cart', [ChartController::class, 'addCart'])->name('backend.keranjang.add_cart');
